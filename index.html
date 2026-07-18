@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#545883" />
+  <meta name="description" content="Hormone Healing Hub: comprende tu ciclo, aprende y avanza acompañada." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Hormone Healing Hub</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" data-route="inicio" aria-label="Hormone Healing Hub, inicio">
+        <span class="brand-mark" aria-hidden="true">✣</span>
+        <span>Hormone<br />Healing Hub</span>
+      </a>
+      <nav class="desktop-nav">
+        <button class="nav-item active" data-route="inicio"><span>⌂</span>Hoy</button>
+        <button class="nav-item" data-route="ciclo"><span>◌</span>Mi ciclo</button>
+        <button class="nav-item" data-route="curso"><span>▷</span>Cyclus Reset</button>
+        <button class="nav-item" data-route="restore"><span>♡</span>Restore Method</button>
+        <button class="nav-item" data-route="biblioteca"><span>▤</span>Biblioteca</button>
+      </nav>
+      <div class="sidebar-card">
+        <p class="eyebrow">Tu espacio seguro</p>
+        <p>Observa. Comprende. Confía.</p>
+      </div>
+      <button class="profile-button" id="profileButton"><span class="avatar">JS</span><span><strong>Julia</strong><small>Mi perfil</small></span><span>›</span></button>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div><p class="eyebrow" id="todayLabel"></p><h1 id="pageTitle">Buenos días, Julia</h1></div>
+        <div class="top-actions"><label class="language-switcher"><span>🌐</span><select id="languageSelect" aria-label="Idioma"><option value="es">ES</option><option value="en">EN</option><option value="nl">NL</option></select></label><button class="icon-button" id="notificationButton" aria-label="Notificaciones">♢<span class="notification-dot"></span></button></div>
+      </header>
+
+      <section class="page active" id="page-inicio">
+        <div class="hero-grid">
+          <article class="cycle-hero">
+            <div>
+              <p class="eyebrow">Tu ciclo hoy</p>
+              <h2>Día <span id="heroCycleDay">14</span></h2>
+              <p class="phase-label">Ventana fértil estimada</p>
+              <p class="muted">Tu cuerpo puede estar acercándose a la ovulación. Observa tus señales con curiosidad.</p>
+              <button class="primary-button" data-open-log>Registrar mi día <span>→</span></button>
+            </div>
+            <div class="cycle-orbit" aria-label="Día 14 de un ciclo estimado de 30 días">
+              <svg viewBox="0 0 160 160" role="img"><circle class="orbit-bg" cx="80" cy="80" r="64"/><circle class="orbit-progress" cx="80" cy="80" r="64"/><circle class="orbit-dot" cx="92" cy="17" r="6"/></svg>
+              <div><strong id="orbitDay">14</strong><span>de 30 días</span></div>
+            </div>
+          </article>
+          <article class="quote-card"><span class="sparkle">✦</span><blockquote>“Tu cuerpo no está en tu contra. Está comunicándose contigo.”</blockquote><p>Una pausa para escucharte</p></article>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">PASO A PASO</p><h2>Tu día, con calma</h2></div><span class="progress-copy"><strong id="taskCount">1 de 4</strong> completadas</span></div>
+        <div class="task-grid" id="taskGrid">
+          <label class="task-card done"><input type="checkbox" checked /><span class="check">✓</span><span><strong>Temperatura basal</strong><small>Registrada · 36,55 °C</small></span><em>07:12</em></label>
+          <label class="task-card"><input type="checkbox" /><span class="check">○</span><span><strong>Suplementos de mañana</strong><small>3 suplementos</small></span><em>Ahora</em></label>
+          <button class="task-card action" data-open-log><span class="check">＋</span><span><strong>Check-in diario</strong><small>¿Cómo te sientes hoy?</small></span><em>3 min</em></button>
+          <label class="task-card"><input type="checkbox" /><span class="check">○</span><span><strong>Módulo 4 · Cyclus Reset</strong><small>Las señales de ovulación</small></span><em>18 min</em></label>
+        </div>
+
+        <div class="content-grid">
+          <article class="card course-progress">
+            <div class="card-top"><span class="pill periwinkle">CYCLUS RESET</span><button class="text-button" data-route="curso">Ver curso →</button></div>
+            <h3>Continúa donde lo dejaste</h3><p class="muted">Módulo 4 · Las señales de ovulación</p>
+            <div class="video-thumb"><div class="play">▶</div><span>18:24</span></div>
+            <div class="progress-row"><div class="progress-track"><span style="width:32%"></span></div><small>4 de 12 módulos</small></div>
+          </article>
+          <article class="card insights-card">
+            <div class="card-top"><span class="pill sage">UNA SEÑAL DE TU CUERPO</span><span>✦</span></div>
+            <h3>Tu energía lleva 3 días subiendo</h3><p>Esto coincide con la fase en la que te encuentras. Puede ser un buen momento para actividades que te hagan sentir activa.</p>
+            <button class="text-button" data-route="ciclo">Ver mis patrones →</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="page-ciclo">
+        <div class="section-heading"><div><p class="eyebrow">CONOCE TUS SEÑALES</p><h2>Mi ciclo</h2></div><button class="primary-button" data-open-log>＋ Registrar hoy</button></div>
+        <div class="stats-grid">
+          <article class="stat"><small>Día del ciclo</small><strong id="statCycleDay">14</strong><span>Fase folicular</span></article>
+          <article class="stat"><small>Duración media</small><strong>30</strong><span>días · últimos 3 ciclos</span></article>
+          <article class="stat"><small>Temperatura de hoy</small><strong id="statTemp">36,55°</strong><span>＋0,12 vs. ayer</span></article>
+          <article class="stat"><small>Registros este ciclo</small><strong id="recordCount">14</strong><span>Constancia excelente</span></article>
+        </div>
+        <article class="card chart-card">
+          <div class="card-top"><div><h3>Temperatura basal</h3><p class="muted">Ciclo actual · °C</p></div><span class="pill blush">DÍAS 1–30</span></div>
+          <div class="chart-wrap"><svg id="temperatureChart" viewBox="0 0 800 260" preserveAspectRatio="none" aria-label="Gráfico de temperatura basal"></svg></div>
+          <div class="chart-legend"><span><i class="legend-line"></i> Temperatura registrada</span><span><i class="legend-zone"></i> Ventana estimada</span></div>
+        </article>
+        <div class="content-grid">
+          <article class="card"><p class="eyebrow">HOY</p><h3>Señales registradas</h3><div class="signal-list" id="todaySignals"><span>💧 Moco cervical: cremoso</span><span>⚡ Energía: alta</span><span>☻ Ánimo: tranquila</span><span>☾ Sueño: 7,5 horas</span></div></article>
+          <article class="card soft-card"><p class="eyebrow">REFLEXIÓN</p><h3>Un patrón, no un diagnóstico</h3><p>Las estimaciones se basan en tus registros. Úsalas para conocer tu cuerpo y consulta a un profesional ante cualquier preocupación.</p></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-curso">
+        <div class="program-hero periwinkle-bg"><div><span class="pill light">CURSO ONLINE · A TU RITMO</span><h2>Cyclus Reset</h2><p>Aprende a comprender tu ciclo, reconocer sus señales y recuperar la confianza en tu cuerpo.</p><div class="hero-meta"><span>12 módulos</span><span>32% completado</span><span>Acceso flexible</span></div></div><div class="flower-art">✣</div></div>
+        <div class="section-heading"><div><p class="eyebrow">TU RECORRIDO</p><h2>Contenido del curso</h2></div></div>
+        <div class="module-list" id="moduleList"></div>
+      </section>
+
+      <section class="page" id="page-restore">
+        <div class="program-hero sage-bg"><div><span class="pill light">ACOMPAÑAMIENTO 1:1 · 4 MESES</span><h2>Restore Method</h2><p>Tu proceso personal, con orientación experta, objetivos claros y un espacio donde sentirte acompañada.</p><div class="hero-meta"><span>Mes 2 de 4</span><span>8 semanas restantes</span><span>Plan personalizado</span></div></div><div class="flower-art">♡</div></div>
+        <div class="restore-grid">
+          <article class="card timeline-card"><p class="eyebrow">TU PROCESO</p><h3>Tu recorrido Restore</h3><div class="timeline"><div class="complete"><i>✓</i><span><strong>Mes 1 · Fundamentos</strong><small>Conocer tu historia y crear una base</small></span></div><div class="current"><i>2</i><span><strong>Mes 2 · Nutrir y regular</strong><small>Estás aquí · 2 tareas esta semana</small></span></div><div><i>3</i><span><strong>Mes 3 · Restaurar</strong><small>Próximamente</small></span></div><div><i>4</i><span><strong>Mes 4 · Integrar</strong><small>Próximamente</small></span></div></div></article>
+          <article class="card appointment-card"><span class="pill blush">PRÓXIMA SESIÓN</span><p class="appointment-day">24</p><h3>Julio · 10:00</h3><p>Sesión 1:1 con Marieke</p><button class="primary-button">Ver preparación</button><button class="secondary-button">Añadir al calendario</button></article>
+        </div>
+        <article class="card"><div class="card-top"><div><p class="eyebrow">ESTE MES</p><h3>Tu plan personal</h3></div><span class="pill sage">2 DE 5</span></div><div class="plan-list"><label><input type="checkbox" checked><span>Desayunar dentro de los 60 minutos después de despertar</span></label><label><input type="checkbox" checked><span>Registrar temperatura basal al despertar</span></label><label><input type="checkbox"><span>Realizar el ejercicio de regulación del sistema nervioso</span></label><label><input type="checkbox"><span>Preparar dos recetas del plan semanal</span></label><label><input type="checkbox"><span>Completar el check-in antes de la sesión</span></label></div></article>
+      </section>
+
+      <section class="page" id="page-biblioteca">
+        <div class="section-heading"><div><p class="eyebrow">TU ESPACIO</p><h2>Biblioteca</h2></div><label class="search"><span>⌕</span><input id="librarySearch" type="search" placeholder="Buscar recursos" /></label></div>
+        <div class="filter-row"><button class="filter active" data-filter="all">Todo</button><button class="filter" data-filter="guia">Guías</button><button class="filter" data-filter="audio">Audios</button><button class="filter" data-filter="receta">Recetas</button><button class="filter" data-filter="documento">Mis documentos</button></div>
+        <div class="library-grid" id="libraryGrid">
+          <article class="resource" data-type="guia"><div class="resource-cover cover-one">☾</div><span class="pill periwinkle">GUÍA</span><h3>Comprender las fases de tu ciclo</h3><p>Lectura · 8 min</p></article>
+          <article class="resource" data-type="audio"><div class="resource-cover cover-two">▶</div><span class="pill sage">AUDIO</span><h3>Regulación: vuelve a tu cuerpo</h3><p>Audio · 12 min</p></article>
+          <article class="resource" data-type="receta"><div class="resource-cover cover-three">⌁</div><span class="pill blush">RECETA</span><h3>Desayuno para una energía estable</h3><p>Receta · 15 min</p></article>
+          <article class="resource" data-type="documento"><div class="resource-cover cover-four">▤</div><span class="pill terracotta">DOCUMENTO</span><h3>Mi plan personal · Julio</h3><p>PDF · Actualizado hace 3 días</p></article>
+          <article class="resource" data-type="guia"><div class="resource-cover cover-five">✣</div><span class="pill periwinkle">GUÍA</span><h3>Señales de una posible ovulación</h3><p>Lectura · 6 min</p></article>
+          <article class="resource" data-type="audio"><div class="resource-cover cover-six">♩</div><span class="pill sage">AUDIO</span><h3>Meditación para antes de dormir</h3><p>Audio · 9 min</p></article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Navegación móvil">
+      <button class="active" data-route="inicio"><span>⌂</span>Hoy</button><button data-route="ciclo"><span>◌</span>Ciclo</button><button data-open-log class="log-fab"><span>＋</span>Registrar</button><button data-route="curso"><span>▷</span>Curso</button><button data-route="restore"><span>♡</span>Restore</button>
+    </nav>
+  </div>
+
+  <dialog id="logDialog">
+    <form method="dialog" id="dailyLogForm">
+      <header><div><p class="eyebrow">ESCUCHA TU CUERPO</p><h2>¿Cómo estás hoy?</h2></div><button value="cancel" class="close-button" aria-label="Cerrar">×</button></header>
+      <div class="form-scroll">
+        <div class="form-row"><label>Día del ciclo<input type="number" name="cycleDay" min="1" max="90" value="14" required /></label><label>Temperatura basal<input type="number" name="temperature" min="34" max="42" step="0.01" value="36.55" required /></label></div>
+        <fieldset><legend>¿Cómo está tu energía?</legend><div class="choice-row"><label><input type="radio" name="energy" value="Baja"><span>Baja</span></label><label><input type="radio" name="energy" value="Media"><span>Media</span></label><label><input type="radio" name="energy" value="Alta" checked><span>Alta</span></label></div></fieldset>
+        <fieldset><legend>Estado de ánimo</legend><div class="choice-row"><label><input type="radio" name="mood" value="Sensible"><span>Sensible</span></label><label><input type="radio" name="mood" value="Tranquila" checked><span>Tranquila</span></label><label><input type="radio" name="mood" value="Irritable"><span>Irritable</span></label></div></fieldset>
+        <fieldset><legend>Moco cervical</legend><div class="choice-row wrap"><label><input type="radio" name="mucus" value="Seco"><span>Seco</span></label><label><input type="radio" name="mucus" value="Pegajoso"><span>Pegajoso</span></label><label><input type="radio" name="mucus" value="Cremoso" checked><span>Cremoso</span></label><label><input type="radio" name="mucus" value="Elástico"><span>Elástico</span></label></div></fieldset>
+        <label>Horas de sueño<input type="number" name="sleep" min="0" max="16" step="0.5" value="7.5" /></label>
+        <label>Algo que quieras recordar<textarea name="notes" rows="3" placeholder="Escribe con libertad…"></textarea></label>
+        <p class="privacy-note">⌾ Tus registros son privados y permanecen en este dispositivo en esta versión.</p>
+      </div>
+      <footer><button value="cancel" class="secondary-button">Ahora no</button><button type="submit" value="default" class="primary-button">Guardar mi día</button></footer>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="language-welcome" id="languageWelcome" role="dialog" aria-modal="true" aria-labelledby="languageWelcomeTitle">
+    <div class="language-welcome-card">
+      <span class="welcome-mark">✣</span><p class="eyebrow">HORMONE HEALING HUB</p>
+      <h2 id="languageWelcomeTitle">Elige tu idioma</h2><p class="welcome-copy">Choose your language · Kies je taal</p>
+      <div class="language-options">
+        <button data-language="es"><strong>Español</strong><span>Continuar en español →</span></button>
+        <button data-language="en"><strong>English</strong><span>Continue in English →</span></button>
+        <button data-language="nl"><strong>Nederlands</strong><span>Doorgaan in het Nederlands →</span></button>
+      </div>
+      <small>Podrás cambiarlo en cualquier momento · You can change it anytime · Je kunt dit altijd wijzigen</small>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
